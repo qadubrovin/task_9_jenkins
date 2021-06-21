@@ -16,6 +16,8 @@ public class TestBase {
 
     @BeforeAll
     static void setup() {
+
+
         SelenideLogger.addListener("AllureSelenide", new AllureSelenide());
         Configuration.startMaximized = true;
 
@@ -25,7 +27,7 @@ public class TestBase {
         capabilities.setCapability("enableVideo", true);
 
         Configuration.browserCapabilities = capabilities;
-        Configuration.remote = "https://user1:1234@selenoid.autotests.cloud/wd/hub/";
+        Configuration.remote = "https://user1:1234" + System.getProperty("remote_url", "@selenoid1.autotests.cloud/wd/hub/");
     }
 
     @AfterEach

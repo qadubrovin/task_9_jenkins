@@ -37,6 +37,15 @@ tasks.withType(JavaCompile) {
     targetCompatibility = JavaVersion.VERSION_1_8
 }
 
-test {
+tasks.withType(Test) {
+    systemProperties(System.getProperties())
+
     useJUnitPlatform()
+
+}
+
+task some_run(type: Test) {
+    useJUnitPlatform {
+        includeTags 'terminal'
+    }
 }

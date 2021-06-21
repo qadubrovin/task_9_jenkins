@@ -1,5 +1,6 @@
 package tests;
 
+import org.junit.jupiter.api.Tag;
 import org.junit.jupiter.api.Test;
 
 import static com.codeborne.selenide.Condition.visible;
@@ -16,6 +17,7 @@ public class LambdaTest extends TestBase {
     private static final int ISSUE_NUMBER = 68;
 
     @Test
+    @Tag("terminal")
     public void issueSearchLambdaTest() {
         step("Открываем главную страницу", (s) -> {
             s.parameter("URL", BASE_URL);
