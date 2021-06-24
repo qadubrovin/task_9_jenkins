@@ -30,9 +30,9 @@ public class TestBase {
         capabilities.setCapability("enableVideo", true);
 
         Configuration.browserCapabilities = capabilities;
-        Configuration.remote = "https://" + System.getProperty("login", credentials.login()) + ":" +
-                System.getProperty("password", credentials.password()) +
-                    System.getProperty("remote_url", "@selenoid12.autotests.cloud/wd/hub/");
+//        Configuration.remote = "https://" + System.getProperty("login", credentials.login()) + ":" +
+//                System.getProperty("password", credentials.password()) +
+//                    System.getProperty("remote_url", "@selenoid12.autotests.cloud/wd/hub/");
 
     }
 
@@ -44,8 +44,6 @@ public class TestBase {
         Attach.pageSource();
         Attach.browserConsoleLogs();
         closeWebDriver();
-
-        Attach.addVideo(sessionId);
     }
 
     public static String getSessionId(){
